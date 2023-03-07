@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     public float MAX_SPEED = 1.0f;
+    public Transform crosshair;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,11 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ShiftCamera();
+        CheckMouseState();
+    }
+
+    void ShiftCamera(){
         //Evaluate horizontal direction
         if(Input.GetKey(KeyCode.D)){
             transform.Translate(Vector3.right * MAX_SPEED);
@@ -28,6 +34,14 @@ public class CameraMovement : MonoBehaviour
         }
         else if(Input.GetKey(KeyCode.S)){
             transform.Translate(Vector3.down * MAX_SPEED);
+        }
+    }
+
+    void CheckMouseState(){
+        if(Input.GetMouseButtonDown(1)){
+            Vector2 location = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            crosshair.transform.Translate(location);
+            crosshair.
         }
     }
 }
