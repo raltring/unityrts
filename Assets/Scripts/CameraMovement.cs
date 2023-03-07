@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     public float MAX_SPEED = 1.0f;
-    public Transform crosshair;
+    public GameObject crosshair;
 
     // Start is called before the first frame update
     void Start()
@@ -39,9 +39,9 @@ public class CameraMovement : MonoBehaviour
 
     void CheckMouseState(){
         if(Input.GetMouseButtonDown(1)){
+            CrosshairFunctions script = crosshair.GetComponent<CrosshairFunctions>();
             Vector2 location = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            crosshair.transform.Translate(location);
-            crosshair.
+            script.UpdateLocation(location);
         }
     }
 }
