@@ -40,6 +40,10 @@ public class UnitMovement : MonoBehaviour
         }
     }
 
+    void OnMouseDown(){
+        transform.tag = "UserSelected";
+    }
+
     void UpdatePosition(){
         if(moving == true){
             Vector2 transformPosition = transform.position;
