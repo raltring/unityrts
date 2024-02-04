@@ -8,9 +8,10 @@ public class UnitMovement : MonoBehaviour
     public BoxCollider2D collision;
     public float MAX_SPEED;
     public float APPROACH_DISTANCE;
+    public SpriteRenderer m_SpriteRenderer;
     private Vector2 movePosition;
     private bool moving = false;
-
+    
     // Start is called before the first frame update
     void Start(){
         gameObject.name = "Warrior1";
@@ -47,6 +48,12 @@ public class UnitMovement : MonoBehaviour
     void UpdatePosition(){
         if(moving == true){
             Vector2 transformPosition = transform.position;
+            if(transformPosition.x > movePosition.x){
+                m_SpriteRenderer.flipX = true;
+            }
+            else{
+                m_SpriteRenderer.flipX = false;
+            }            
             float distance = Vector2.Distance(transformPosition,movePosition);
             Debug.Log(string.Format("Distance between {0} and {1} is {2}",transformPosition, movePosition,
             distance));
