@@ -38,6 +38,7 @@ public class UnitMovement : MonoBehaviour
         if(gameObject.tag == "UserSelected" && Input.GetMouseButtonDown(1)){
             movePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             moving = true;
+            //body.bodyType = RigidbodyType2D.Dynamic;
         }
     }
 
@@ -59,14 +60,15 @@ public class UnitMovement : MonoBehaviour
             distance));
             if(distance <= APPROACH_DISTANCE){
                 moving = false;
+                //body.bodyType = RigidbodyType2D.Static;
                 Debug.Log(string.Format("{0} has reached its destination",gameObject.name));
             }
             else{
-                Vector2 moveDirection = new Vector2(movePosition.x - transform.position.x,
+                Vector2 moveDirection = new(movePosition.x - transform.position.x,
                 movePosition.y - transform.position.y);
                 moveDirection.Normalize();
                 transform.Translate(moveDirection * MAX_SPEED);
             }
-        }     
+        }
     }
 }

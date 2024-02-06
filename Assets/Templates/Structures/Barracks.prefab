@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6109924582721529623}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.28, y: 0.02, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5602624200502314731
 SpriteRenderer:
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 48189414893107431}
   collision: {fileID: 8443527793921389242}
-  warrior: {fileID: 3932598325660090916, guid: f22c651cb3f74a668a9c505ad4d5d958, type: 3}
+  warrior: {fileID: 1601947692949862, guid: 7aed946b5664405459098c6b3528627a, type: 3}
 --- !u!50 &48189414893107431
 Rigidbody2D:
   serializedVersion: 4
